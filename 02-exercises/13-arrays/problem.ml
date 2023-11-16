@@ -54,7 +54,7 @@ let () =
 
    Let's implement a function [double] using [Array.iteri], which takes an [int
    array] and doubles each element of the array in place. *)
-let double array : unit = failwith "For you to implement"
+let double array : unit = Array.iteri array ~f:(fun index value -> array.(index) <- 2 * value)
 
 let%test "Testing double..." = 
   let array = [| 1; 1; 1 |] in
