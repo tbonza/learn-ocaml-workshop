@@ -43,7 +43,7 @@ let float_of_int xs = List.map ~f:Float.of_int xs
 
    Let's rewrite the [range] function we wrote in problem 9 to use [init].  *)
 
-let range from to_ = failwith "For you to implement"
+let range from to_ = List.init (to_ - from) ~f:(fun i -> from + i)
 
 (** ========== [List.range] ========== **)
 (* Turns out this special case of [List.init] is useful enough that it has it's own 
