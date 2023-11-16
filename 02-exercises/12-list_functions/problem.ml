@@ -76,7 +76,7 @@ let range from to_ = List.init (to_ - from) ~f:(fun i -> from + i)
    Let's use [iter] to print a list of ints. Remember that we can use
    [Stdio.printf] to print formatted strings. *)
 
-let print_int_list xs = failwith "For you to implement"
+let print_int_list xs = List.iter xs ~f:(fun i -> Stdio.printf "%d," i)
 
 (* There are many more useful [List] functions, which you can read about here:
    https://ocaml.janestreet.com/ocaml-core/latest/doc/base/Base/List/index.html
