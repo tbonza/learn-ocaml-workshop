@@ -16,8 +16,8 @@ open! Base
 
    Let's rewrite [simpler_sum] and [simpler_product] using List.fold *) 
 
-let simpler_sum xs = failwith "For you to implement"
-let simpler_product xs = failwith "For you to implement"
+let simpler_sum xs = List.fold ~init:0 ~f:( + ) xs;;
+let simpler_product xs = List.fold ~init:1 ~f:( * ) xs;;
 
 (** ========== [List.map] ========== **)
 (* [List.map] has the following signature:
@@ -30,7 +30,7 @@ let simpler_product xs = failwith "For you to implement"
    Let's write a function that takes in an int list and transforms it into a
    float list. (Hint: you can cast an int to a float using [Float.of_int].) *)
                        
-let float_of_int xs = failwith "For you to implement"
+let float_of_int xs = List.map ~f:Float.of_int xs
 
 (** ========== [List.init] ========== **)
 (* [List.init] has the following signature:
