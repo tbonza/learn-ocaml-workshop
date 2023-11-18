@@ -49,8 +49,8 @@ let%test "Testing non_zero..." = Bool.( = ) true (non_zero (-400))
    matching on both of them at the same time. *)
 let both_non_zero x y = 
   match x, y with
-  | non_zero x non_zero y -> true
-  | _ -> false
+  | x, y when non_zero x && non_zero y -> true
+  | _                                  -> false
 
 let%test "Testing both_non_zero..." = Bool.( = ) false (both_non_zero 0 0)
 let%test "Testing both_non_zero..." = Bool.( = ) false (both_non_zero 0 1)
